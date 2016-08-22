@@ -1,31 +1,34 @@
+int leftEarLocationX = 225;
+int rightEarLocationX= 275;
+
 void setup(){
   size(500,500);
 }
 
 void draw(){
-	crust();
-	tomatoSauce();
+	background(125);
+	face();
+	ears();
 }
 
-void crust(){
-	fill(209,187,21);
-	triangle(112,80,250,450,388,80);
-	fill(122,85,4);
-	triangle(100,50,250,450,400,50);
-	rect(100,30,300,50,7);
+void face(){
+	fill(0,128,0);
+	ellipse(250, 250, 50, 50);
+	fill(64,64,64);
+	ellipse(240, 245, 5, 5);
+	ellipse(260, 245, 5, 5);
+	
 }
 
-void tomatoSauce(){
-	noFill();
-	stroke(255, 0, 0);
-	strokeWeight(5);
-	triangle(112,80,250,450,388,80);
-	noStroke();
+void ears(){
+	fill(0,0,0);
+	ellipse(leftEarLocationX, 240, 10, 20);
+	ellipse(rightEarLocationX, 240, 10, 20);
+	leftEarLocationX -= 1;
+	// if (leftEarLocationX <= 230) {
+	// 	leftEarLocationX += 1;
+	// }
+	// else {
+	// 	leftEarLocationX -= 1;
+	// }
 }
-
-void redPepper(){
-	fill(255,0,0);
-	arc(300, 300, 100, 100, 3PI/4, 4PI/4);
-}
-
-
