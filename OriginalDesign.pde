@@ -23,6 +23,7 @@ void draw(){
 	earsOut();
 	mouth();
 	body();
+	floor();
 }
 
 void face(){
@@ -79,7 +80,7 @@ void mouth(){
 void body(){
 	fill(0,0,0);
 	strokeWeight(2);
-	line(250, 280, bodyPosX, bodyPosY);
+	line(250, 280, mouseX, mouseY);
 	if (move){
 		bodyPosY += 1;
 		bodyPosX += 2;
@@ -88,4 +89,9 @@ void body(){
 		bodyPosY -= 1;
 		bodyPosX -= 2;
 	}
+}
+
+void floor(){
+	fill(0,0,0);
+	rect(0, 460, 500, 40);
 }
