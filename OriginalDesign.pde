@@ -1,3 +1,7 @@
+int backgrndR = 0;
+int backgrndG = 0;
+int backgrndB = 0;
+
 int leftEarLocationX = 225;
 int rightEarLocationX= 275;
 
@@ -18,12 +22,21 @@ void setup(){
 }
 
 void draw(){
-	background(125);
+	backgroundChange();
 	face();
 	earsOut();
 	mouth();
 	body();
 	floor();
+	error();
+	boxSurroundingGuy();
+}
+
+void backgroundChange(){
+	background(backgrndR,backgrndB,backgrndG);
+	while (backgrndR<=255){
+		
+	}
 }
 
 void face(){
@@ -94,4 +107,24 @@ void body(){
 void floor(){
 	fill(0,0,0);
 	rect(0, 460, 500, 40);
+}
+
+void error(){
+	if (mouseY<=250 || mouseX<=180 || mouseX>=320){
+		if (move){
+			fill(100,0,0);
+			textSize(30);
+			text("Error!!!!!!", 210, 50);
+		}
+		else{
+
+		}
+	}
+	else{
+	}
+}
+
+void boxSurroundingGuy(){
+	noFill();
+	rect(180, 200, 140, 260);
 }
