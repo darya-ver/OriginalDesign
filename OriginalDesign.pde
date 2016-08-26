@@ -1,7 +1,3 @@
-int backgrndR = 0;
-int backgrndG = 0;
-int backgrndB = 0;
-
 int leftEarLocationX = 225;
 int rightEarLocationX= 275;
 
@@ -11,9 +7,6 @@ int earLength = 20;
 int mouthHeight = 10;
 int mouthLength = 30;
 
-int bodyPosX = 250;
-int bodyPosY = 400;
-
 boolean move = true;
 
 void setup(){
@@ -22,7 +15,7 @@ void setup(){
 }
 
 void draw(){
-	backgroundChange();
+	background(150);
 	face();
 	earsOut();
 	mouth();
@@ -30,13 +23,6 @@ void draw(){
 	floor();
 	error();
 	boxSurroundingGuy();
-}
-
-void backgroundChange(){
-	background(backgrndR,backgrndB,backgrndG);
-	while (backgrndR<=255){
-		
-	}
 }
 
 void face(){
@@ -91,17 +77,13 @@ void mouth(){
 }
 
 void body(){
+	//main body
 	fill(0,0,0);
 	strokeWeight(2);
-	line(250, 280, mouseX, mouseY);
-	if (move){
-		bodyPosY += 1;
-		bodyPosX += 2;
-	}
-	else {
-		bodyPosY -= 1;
-		bodyPosX -= 2;
-	}
+	line(250, 280, 250, 400);
+	//arms
+	line(250,310,mouseX,mouseY);
+	line(250,310,(500-mouseX),(500-mouseY));
 }
 
 void floor(){
@@ -110,7 +92,7 @@ void floor(){
 }
 
 void error(){
-	if (mouseY<=250 || mouseX<=180 || mouseX>=320){
+	if (mouseY<=200 || mouseX<=180 || mouseX>=320){
 		if (move){
 			fill(100,0,0);
 			textSize(30);
@@ -121,6 +103,7 @@ void error(){
 		}
 	}
 	else{
+
 	}
 }
 
